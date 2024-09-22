@@ -6,8 +6,8 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.dotnet8
 finish-args:
   - --device=dri
-  - --socket=wayland
-  - --socket=fallback-x11
+    # - --socket=wayland
+  - --socket=x11
   - --share=ipc
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
 
