@@ -30,10 +30,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/yesser-studios/Pong.git
-        tag: v1.2.1
+        tag: v1.2.2-flatpak
       - type: archive
-        url: https://github.com/yesser-studios/Pong/releases/download/v1.2.1/linux-universal.tar.gz
-        sha256: 2093211cf963f6c805bfbd5e5d09a1e6e6d586d1b08db46cc5ff16ffcf065324
+        url: https://github.com/yesser-studios/Pong/releases/download/v1.2.2/linux-universal.tar.gz
+        sha256: 5d62c6d63cd47ba42e57f99b66ca12fe7c77f2d7c35870775c16358b34782d51
         dest-filename: build.tar.gz
         dest: bin/
         strip-components: 1
