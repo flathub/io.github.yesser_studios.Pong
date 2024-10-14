@@ -5,7 +5,7 @@ sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.dotnet8
 finish-args:
-  - --device=dri
+  - --device=all
     # - --socket=wayland
   - --socket=x11
   - --share=ipc
