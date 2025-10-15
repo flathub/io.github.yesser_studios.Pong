@@ -30,10 +30,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/yesser-studios/Pong.git
-        tag: v1.2.3-flatpak
+        tag: v1.2.4
       - type: archive
-        url: https://github.com/yesser-studios/Pong/releases/download/v1.2.3/linux-universal.tar.gz
-        sha256: b6edf8c8a276875d40139128563d50e76a063b14167362e148a2ae413c9e331e
+        url: https://github.com/yesser-studios/Pong/releases/download/v1.2.4/linux-universal.tar.gz
+        sha256: b88d022f0e11a2c4029212b8d03eb4f041df64f4ab8dbca727a3b98b622831e0
         dest-filename: build.tar.gz
         dest: bin/
         strip-components: 1
@@ -42,4 +42,4 @@ modules:
         commands:
           - for i in {0..9}; do test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i; done
           - exec dotnet /app/bin/Pong.Desktop.dll
-      
+
