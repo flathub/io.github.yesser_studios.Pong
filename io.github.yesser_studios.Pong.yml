@@ -16,13 +16,13 @@ modules:
   - name: dotnet
     buildsystem: simple
     build-commands:
-      - /usr/lib/sdk/dotnet8/bin/install.sh
+      - if [ $(uname -m) = "aarch64" ]; then /usr/lib/sdk/dotnet8/bin/install.sh; fi
 
   - name: pong
     buildsystem: simple
     build-commands:
       - mkdir -p ${FLATPAK_DEST}/bin
-      - cp -r ./bin/release/* ${FLATPAK_DEST}/bin/
+      - if [ $(uname -m) = "aarch64" ]; then cp -r ./bin/universal/release/* ${FLATPAK_DEST}/bin/; else cp -r ./bin/x64/release/* ${FLATPAK_DEST}/bin/; fi
       - install -Dm644 flatpak/io.github.yesser_studios.Pong.desktop -t ${FLATPAK_DEST}/share/applications/
       - install -Dm644 flatpak/io.github.yesser_studios.Pong.svg -t ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps
       - install -Dm644 flatpak/io.github.yesser_studios.Pong.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
@@ -30,16 +30,21 @@ modules:
     sources:
       - type: git
         url: https://github.com/yesser-studios/Pong.git
-        tag: v1.2.4
+        tag: v1.2.5-alpha.3
       - type: archive
-        url: https://github.com/yesser-studios/Pong/releases/download/v1.2.4/linux-universal.tar.gz
-        sha256: b88d022f0e11a2c4029212b8d03eb4f041df64f4ab8dbca727a3b98b622831e0
+        url: https://github.com/yesser-studios/Pong/releases/download/v1.2.5-alpha.3/linux-universal.tar.gz
+        sha256: 13b10614666ba6373dc131228bcdf52c05354110a6b3a3c0040c5d0f3c7abdcd
         dest-filename: build.tar.gz
-        dest: bin/
+        dest: bin/universal/
+      - type: archive
+        url: https://github.com/yesser-studios/Pong/releases/download/v1.2.5-alpha.3/linux-x64.tar.gz
+        sha256: 225367615902e5d9024d8b15a6c82ad086e82b5cc8b366d529a50aef290f4ea5
+        dest-filename: build.tar.gz
+        dest: bin/x64/
         strip-components: 1
       - type: script
         dest-filename: run.sh
         commands:
           - for i in {0..9}; do test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i; done
-          - exec dotnet /app/bin/Pong.Desktop.dll
+          - if [ $(uname -m) = "aarch64" ]; then exec dotnet /app/bin/Pong.Desktop.dll; else exec /app/bin/Pong.Desktop; fi
 
