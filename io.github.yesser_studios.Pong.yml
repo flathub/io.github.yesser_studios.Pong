@@ -31,7 +31,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/yesser-studios/Pong.git
-        tag: v1.3.0-alpha.2
+        tag: v1.3.0-alpha.2.1
       - type: archive
         url: https://github.com/yesser-studios/Pong/releases/download/v1.3.0-alpha.2/linux-universal.tar.gz
         sha256: 0e4f7331d0b7f2317207043624171fe7edd62215dac0108b6dafeb4e92c08f28
