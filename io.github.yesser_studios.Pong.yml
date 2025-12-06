@@ -10,6 +10,7 @@ finish-args:
   - --socket=x11
   - --share=ipc
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
+  - --filesystem=xdg-run/app/com.discordapp.DiscordCanary:create
 
 command: run.sh
 modules:
