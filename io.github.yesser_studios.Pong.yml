@@ -30,15 +30,15 @@ modules:
     sources:
       - type: git
         url: https://github.com/yesser-studios/Pong.git
-        tag: v1.2.5-alpha.3
+        tag: v1.3.0-alpha.2
       - type: archive
-        url: https://github.com/yesser-studios/Pong/releases/download/v1.2.5-alpha.3/linux-universal.tar.gz
-        sha256: 13b10614666ba6373dc131228bcdf52c05354110a6b3a3c0040c5d0f3c7abdcd
+        url: https://github.com/yesser-studios/Pong/releases/download/v1.3.0-alpha.2/linux-universal.tar.gz
+        sha256: 0e4f7331d0b7f2317207043624171fe7edd62215dac0108b6dafeb4e92c08f28
         dest-filename: build.tar.gz
         dest: bin/universal/
       - type: archive
-        url: https://github.com/yesser-studios/Pong/releases/download/v1.2.5-alpha.3/linux-x64.tar.gz
-        sha256: 225367615902e5d9024d8b15a6c82ad086e82b5cc8b366d529a50aef290f4ea5
+        url: https://github.com/yesser-studios/Pong/releases/download/v1.3.0-alpha.2/linux-x64.tar.gz
+        sha256: a570f12b493da796bd98f56306d195c3460517a5d50506bdc66b83835d6112b9
         dest-filename: build.tar.gz
         dest: bin/x64/
         strip-components: 1
