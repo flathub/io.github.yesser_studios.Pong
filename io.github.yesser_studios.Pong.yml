@@ -10,6 +10,7 @@ finish-args:
   - --socket=x11
   - --share=ipc
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
+  - --filesystem=xdg-run/app/com.discordapp.DiscordCanary:create
 
 command: run.sh
 modules:
@@ -40,6 +41,4 @@ modules:
       - type: script
         dest-filename: run.sh
         commands:
-          - for i in {0..9}; do test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i; done
           - exec dotnet /app/bin/Pong.Desktop.dll
-
