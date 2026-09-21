@@ -32,6 +32,7 @@ modules:
       - type: git
         url: https://github.com/yesser-studios/Pong.git
         tag: v1.2.5
+        commit: 2f458aadc7ed126ac1fdceb9e679bfedf8ae5a2d
       - type: archive
         url: https://github.com/yesser-studios/Pong/releases/download/v1.2.5/linux-universal.tar.gz
         sha256: bcdd67c1ebf43ca4654f620751c0ee4cb453e60f50687dd219da75ca92d62fd3
